@@ -4,6 +4,7 @@ import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
   // Esta configuración vamos aceptar solo la información como se espera 
   app.useGlobalPipes(
     new ValidationPipe({
